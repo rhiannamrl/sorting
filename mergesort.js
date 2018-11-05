@@ -32,4 +32,11 @@ function merge(arr1, arr2) {
   return sortedArr;
 }
 
-function mergeSort(array) {}
+function mergeSort(array) {
+  if (array.length === 1) {
+    return array;
+  } else {
+    const splitArr = split(array);
+    return merge(mergeSort(splitArr[0]), mergeSort(splitArr[1]));
+  }
+}
